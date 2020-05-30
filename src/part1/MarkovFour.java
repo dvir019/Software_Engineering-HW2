@@ -3,12 +3,13 @@ package part1;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class MarkovOne {
+public class MarkovFour {
     private String myText;
     private Random myRandom;
 
+    private static final int FOUR = 4;
 
-    public MarkovOne() {
+    public MarkovFour() {
         myRandom = new Random();
     }
 
@@ -26,35 +27,40 @@ public class MarkovOne {
         }
         StringBuilder sb = new StringBuilder();
 
-        int index = myRandom.nextInt(myText.length() - 1);
-        char selectedChar = myText.charAt(index);
-        sb.append(selectedChar);
+        int index = myRandom.nextInt(myText.length() - FOUR);
+        String selectedString = myText.substring(index, index + FOUR);
+        sb.append(selectedString);
 
         for (int k = 1; k < numChars; k++) {
-            ArrayList<Character> follows = getFollows(String.valueOf(selectedChar));
+            ArrayList<String> follows = getFollows(String.valueOf(selectedString));
             // TODO change
             if (follows.isEmpty()) {
                 break;
             }
             index = myRandom.nextInt(follows.size());
-            selectedChar = follows.get(index);
-            sb.append(selectedChar);
+            selectedString = follows.get(index);
+            System.out.println("Selected (" + selectedString + ")--------index="+index);
+            sb.append(selectedString);
         }
 
         return sb.toString();
     }
 
-    public ArrayList<Character> getFollows(String key) {
-        ArrayList<Character> follows = new ArrayList<>();
+    public ArrayList<String> getFollows(String key) {
+        ArrayList<String> follows = new ArrayList<>();
         int startIndex = myText.indexOf(key);
+        System.out.println("index="+startIndex);
 
         while (startIndex != -1) {
             int followingCharIndex = startIndex + key.length();
-            if (followingCharIndex < myText.length()) {
-                follows.add(myText.charAt(followingCharIndex));
+            if (followingCharIndex <= myText.length() - FOUR) {
+                follows.add(myText.substring(followingCharIndex, followingCharIndex + FOUR));
             }
             startIndex = myText.indexOf(key, startIndex + 1);
         }
+        System.out.print("follows: ");
+        System.out.println(follows);
+
         return follows;
     }
 }

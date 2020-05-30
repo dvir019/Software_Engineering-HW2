@@ -30,6 +30,19 @@ public class MarkovRunner {
         }
     }
 
+    public void runMarkovFour(String trainingFilePath) {
+        SEFileUtil seFileUtil = new SEFileUtil(trainingFilePath);
+        String st = seFileUtil.asString();
+        st = st.replace('\n', ' ');
+        MarkovFour markov = new MarkovFour();
+        markov.setSeed(25);
+        markov.setTraining(st);
+        for (int k = 0; k < 3; k++) {
+            String text = markov.getRandomText(500);
+            printOut(text);
+        }
+    }
+
     private void printOut(String s) {
         String[] words = s.split("\\s+");
         int psize = 0;
@@ -50,7 +63,7 @@ public class MarkovRunner {
         MarkovRunner markovRunner = new MarkovRunner();
 //      markovRunner.runMarkovZero(args[0]);
         String path = "C:\\Users\\Dvir\\Desktop\\Software_Engineering\\HW2\\Software_Engineering-HW2\\Data\\merkel.txt";
-        markovRunner.runMarkovOne(path);
+        markovRunner.runMarkovFour(path);
     }
 
 }
