@@ -2,11 +2,11 @@ package part1;
 
 import java.util.Random;
 
-public class MarkovZero {
+public class MarkovOne {
     private String myText;
     private Random myRandom;
 
-    public MarkovZero() {
+    public MarkovOne() {
         myRandom = new Random();
     }
 
