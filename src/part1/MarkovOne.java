@@ -1,10 +1,12 @@
 package part1;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class MarkovOne {
     private String myText;
     private Random myRandom;
+
 
     public MarkovOne() {
         myRandom = new Random();
@@ -23,11 +25,36 @@ public class MarkovOne {
             return "";
         }
         StringBuilder sb = new StringBuilder();
-        for (int k = 0; k < numChars; k++) {
-            int index = myRandom.nextInt(myText.length());
-            sb.append(myText.charAt(index));
+
+        int index = myRandom.nextInt(myText.length() - 1);
+        char selectedChar = myText.charAt(index);
+        sb.append(selectedChar);
+
+        for (int k = 1; k < numChars; k++) {
+            ArrayList<Character> follows = getFollows(String.valueOf(selectedChar));
+            // TODO change
+            if (follows.isEmpty()) {
+                break;
+            }
+            index = myRandom.nextInt(follows.size());
+            selectedChar = follows.get(index);
+            sb.append(selectedChar);
         }
 
         return sb.toString();
+    }
+
+    public ArrayList<Character> getFollows(String key) {
+        ArrayList<Character> following = new ArrayList<>();
+        int startIndex = myText.indexOf(key);
+
+        while (startIndex != -1) {
+            int followingCharIndex = startIndex + key.length();
+            if (followingCharIndex < myText.length()) {
+                following.add(myText.charAt(followingCharIndex));
+            }
+            startIndex = myText.indexOf(key, startIndex + 1);
+        }
+        return following;
     }
 }
