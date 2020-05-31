@@ -3,10 +3,11 @@ package part2;
 import java.util.Random;
 
 public class MarkovZero extends AbstractMarkovModel {
-    private String myText;
-    private Random myRandom;
+
+    private static final int ZERO = 0;
 
     public MarkovZero() {
+        super(ZERO);
         myRandom = new Random();
     }
 

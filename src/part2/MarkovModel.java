@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class MarkovModel extends AbstractMarkovModel {
-    private String myText;
-    private Random myRandom;
+
     private int numOfChars;
 
     private static final int ONE = 1;
 
     public MarkovModel(int numOfChars) {
+        super(numOfChars);
         this.numOfChars = numOfChars;
         myRandom = new Random();
     }

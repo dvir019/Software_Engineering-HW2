@@ -5,8 +5,10 @@ import java.util.*;
 public abstract class AbstractMarkovModel implements IMarkovModel {
     protected String myText;
     protected Random myRandom;
+    private int markovOrder;
 
-    public AbstractMarkovModel() {
+    public AbstractMarkovModel(int markovOrder) {
+        this.markovOrder = markovOrder;
         myRandom = new Random();
     }
 
@@ -30,4 +32,8 @@ public abstract class AbstractMarkovModel implements IMarkovModel {
         return follows;
     }
 
+    @Override
+    public String toString() {
+        return "MarkovModel of order " + markovOrder;
+    }
 }

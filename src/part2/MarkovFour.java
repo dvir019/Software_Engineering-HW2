@@ -4,13 +4,12 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class MarkovFour extends AbstractMarkovModel {
-    private String myText;
-    private Random myRandom;
 
     private static final int FOUR = 4;
     private static final int ONE = 1;
 
     public MarkovFour() {
+        super(FOUR);
         myRandom = new Random();
     }
 
