@@ -51,6 +51,9 @@ public class MarkovRunnerWithInterface {
 	}
 
 	public static void main(String[] args) {
-
+    	MarkovRunnerWithInterface markovRunner = new MarkovRunnerWithInterface();
+    	//markovRunner.runMarkov(args[0]);
+		String path = "C:\\Users\\Dvir\\Desktop\\Software_Engineering\\HW2\\Software_Engineering-HW2\\Data\\putin.txt";
+		markovRunner.runMarkov(path);
 	}
 }
