@@ -9,7 +9,7 @@ public class MarkovRunner {
         String st = seFileUtil.asString();
         st = st.replace('\n', ' ');
         MarkovZero markov = new MarkovZero();
-        markov.setSeed(101);
+        markov.setSeed(25);
         markov.setTraining(st);
         for (int k = 0; k < 3; k++) {
             String text = markov.getRandomText(500);
@@ -22,7 +22,7 @@ public class MarkovRunner {
         String st = seFileUtil.asString();
         st = st.replace('\n', ' ');
         MarkovOne markov = new MarkovOne();
-        markov.setSeed(42);
+        markov.setSeed(25);
         markov.setTraining(st);
         for (int k = 0; k < 3; k++) {
             String text = markov.getRandomText(500);
@@ -35,6 +35,19 @@ public class MarkovRunner {
         String st = seFileUtil.asString();
         st = st.replace('\n', ' ');
         MarkovFour markov = new MarkovFour();
+        markov.setSeed(25);
+        markov.setTraining(st);
+        for (int k = 0; k < 3; k++) {
+            String text = markov.getRandomText(500);
+            printOut(text);
+        }
+    }
+
+    public void runMarkovModel(String trainingFilePath) {
+        SEFileUtil seFileUtil = new SEFileUtil(trainingFilePath);
+        String st = seFileUtil.asString();
+        st = st.replace('\n', ' ');
+        MarkovModel markov = new MarkovModel(6);
         markov.setSeed(25);
         markov.setTraining(st);
         for (int k = 0; k < 3; k++) {
@@ -63,7 +76,11 @@ public class MarkovRunner {
         MarkovRunner markovRunner = new MarkovRunner();
 //      markovRunner.runMarkovZero(args[0]);
         String path = "C:\\Users\\Dvir\\Desktop\\Software_Engineering\\HW2\\Software_Engineering-HW2\\Data\\merkel.txt";
+        markovRunner.runMarkovZero(path);
+        markovRunner.runMarkovOne(path);
         markovRunner.runMarkovFour(path);
+        markovRunner.runMarkovModel(path);
+
     }
 
 }
