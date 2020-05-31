@@ -10,7 +10,6 @@ public class MarkovFour extends AbstractMarkovModel {
 
     public MarkovFour() {
         super(FOUR);
-        myRandom = new Random();
     }
 
 

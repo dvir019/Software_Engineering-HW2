@@ -18,6 +18,10 @@ public class EfficientMarkovModel extends AbstractMarkovModel {
         hashMap = new HashMap<>();
     }
 
+    private void buildMap() {
+
+    }
+
     @Override
     public String getRandomText(int numChars) {
         if (myText == null) {
@@ -42,5 +46,10 @@ public class EfficientMarkovModel extends AbstractMarkovModel {
         }
 
         return sb.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "EfficientMarkovModel of order " + numOfChars;
     }
 }

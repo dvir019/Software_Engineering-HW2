@@ -12,7 +12,6 @@ public class MarkovModel extends AbstractMarkovModel {
     public MarkovModel(int numOfChars) {
         super(numOfChars);
         this.numOfChars = numOfChars;
-        myRandom = new Random();
     }
 
     @Override

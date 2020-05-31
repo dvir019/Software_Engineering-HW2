@@ -9,7 +9,6 @@ public class MarkovOne extends AbstractMarkovModel{
 
     public MarkovOne() {
         super(ONE);
-        myRandom = new Random();
     }
 
     @Override

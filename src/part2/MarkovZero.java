@@ -8,7 +8,6 @@ public class MarkovZero extends AbstractMarkovModel {
 
     public MarkovZero() {
         super(ZERO);
-        myRandom = new Random();
     }
 
     @Override
