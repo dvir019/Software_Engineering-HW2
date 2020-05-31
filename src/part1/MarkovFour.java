@@ -8,6 +8,7 @@ public class MarkovFour {
     private Random myRandom;
 
     private static final int FOUR = 4;
+    private static final int ONE = 1;
 
     public MarkovFour() {
         myRandom = new Random();
@@ -28,39 +29,35 @@ public class MarkovFour {
         StringBuilder sb = new StringBuilder();
 
         int index = myRandom.nextInt(myText.length() - FOUR);
-        String selectedString = myText.substring(index, index + FOUR);
-        sb.append(selectedString);
+        String key = myText.substring(index, index + FOUR);
+        sb.append(key);
 
-        for (int k = 1; k < numChars; k++) {
-            ArrayList<String> follows = getFollows(String.valueOf(selectedString));
+        for (int k = FOUR; k < numChars; k++) {
+            ArrayList<Character> follows = getFollows(key);
             // TODO change
             if (follows.isEmpty()) {
                 break;
             }
             index = myRandom.nextInt(follows.size());
-            selectedString = follows.get(index);
-            System.out.println("Selected (" + selectedString + ")--------index="+index);
-            sb.append(selectedString);
+            char selectedChar = follows.get(index);
+            key = key.substring(ONE, FOUR) + selectedChar;
+            sb.append(selectedChar);
         }
 
         return sb.toString();
     }
 
-    public ArrayList<String> getFollows(String key) {
-        ArrayList<String> follows = new ArrayList<>();
+    public ArrayList<Character> getFollows(String key) {
+        ArrayList<Character> follows = new ArrayList<>();
         int startIndex = myText.indexOf(key);
-        System.out.println("index="+startIndex);
 
         while (startIndex != -1) {
             int followingCharIndex = startIndex + key.length();
-            if (followingCharIndex <= myText.length() - FOUR) {
-                follows.add(myText.substring(followingCharIndex, followingCharIndex + FOUR));
+            if (followingCharIndex < myText.length()) {
+                follows.add(myText.charAt(followingCharIndex));
             }
-            startIndex = myText.indexOf(key, startIndex + 1);
+            startIndex = myText.indexOf(key, startIndex + ONE);
         }
-        System.out.print("follows: ");
-        System.out.println(follows);
-
         return follows;
     }
 }
