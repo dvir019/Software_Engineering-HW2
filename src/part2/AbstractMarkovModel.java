@@ -16,6 +16,10 @@ public abstract class AbstractMarkovModel implements IMarkovModel {
         myText = s.trim();
     }
 
+    final public void setSeed(int seed){
+        myRandom.setSeed(seed);
+    }
+
     abstract public String getRandomText(int numChars);
 
     protected ArrayList<Character> getFollows(String key) {

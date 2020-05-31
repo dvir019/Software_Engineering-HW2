@@ -6,54 +6,72 @@ import util.SEFileUtil;
  * The class is use to generate random text
  */
 public class MarkovRunnerWithInterface {
-    public void runModel(IMarkovModel markov, String text, int size) {
+
+    private static final int NUMBER_OF_ARGUMENTS = 2;
+    private static final int SEED_DEFAULT = 0;
+
+    public void runModel(IMarkovModel markov, String text, int size, int seed) {
         markov.setTraining(text);
+        markov.setSeed(seed);
         System.out.println("running with " + markov);
-        for(int k=0; k < 3; k++){
-			String st= markov.getRandomText(size);
-			printOut(st);
-		}
+        for (int k = 0; k < 3; k++) {
+            String st = markov.getRandomText(size);
+            printOut(st);
+        }
     }
-    
-    public void runMarkov(String trainingFilePath) {
-		SEFileUtil seFileUtil = new SEFileUtil(trainingFilePath);
-		String st = seFileUtil.asString();
-		st = st.replace('\n', ' ');
-		int size = 200;
-		
+
+    public void runMarkov(String trainingFilePath, int seed) {
+        SEFileUtil seFileUtil = new SEFileUtil(trainingFilePath);
+        String st = seFileUtil.asString();
+        st = st.replace('\n', ' ');
+        int size = 200;
+
         MarkovZero mz = new MarkovZero();
-        runModel(mz, st, size);
-    
+        runModel(mz, st, size, seed);
+
         MarkovOne mOne = new MarkovOne();
-        runModel(mOne, st, size);
-        
+        runModel(mOne, st, size, seed);
+
         MarkovModel mThree = new MarkovModel(3);
-        runModel(mThree, st, size);
-        
+        runModel(mThree, st, size, seed);
+
         MarkovFour mFour = new MarkovFour();
-        runModel(mFour, st, size);
+        runModel(mFour, st, size, seed);
 
     }
 
-	private void printOut(String s){
-		String[] words = s.split("\\s+");
-		int psize = 0;
-		System.out.println("----------------------------------");
-		for(int k=0; k < words.length; k++){
-			System.out.print(words[k]+ " ");
-			psize += words[k].length() + 1;
-			if (psize > 60) {
-				System.out.println();
-				psize = 0;
-			}
-		}
-		System.out.println("\n----------------------------------");
-	}
+    private void printOut(String s) {
+        String[] words = s.split("\\s+");
+        int psize = 0;
+        System.out.println("----------------------------------");
+        for (int k = 0; k < words.length; k++) {
+            System.out.print(words[k] + " ");
+            psize += words[k].length() + 1;
+            if (psize > 60) {
+                System.out.println();
+                psize = 0;
+            }
+        }
+        System.out.println("\n----------------------------------");
+    }
 
-	public static void main(String[] args) {
-    	MarkovRunnerWithInterface markovRunner = new MarkovRunnerWithInterface();
-    	//markovRunner.runMarkov(args[0]);
-		String path = "C:\\Users\\Dvir\\Desktop\\Software_Engineering\\HW2\\Software_Engineering-HW2\\Data\\putin.txt";
-		markovRunner.runMarkov(path);
-	}
+    public static void main(String[] args) {
+        if (args.length != NUMBER_OF_ARGUMENTS) {
+            System.out.println("Please pass two arguments: 1.input_file 2.seed");
+            System.exit(1);
+        }
+        int seed = SEED_DEFAULT;
+        try {
+            seed = Integer.parseInt(args[1]);
+        } catch (NumberFormatException e) {
+            System.out.println("The second argument must be an integer");
+            System.exit(1);
+        }
+
+        MarkovRunnerWithInterface markovRunner = new MarkovRunnerWithInterface();
+        //markovRunner.runMarkov(args[0], args[1]);
+        String path = "C:\\Users\\Dvir\\Desktop\\Software_Engineering\\HW2\\Software_Engineering-HW2\\Data\\merkel.txt";
+        //int seed = 42;
+        markovRunner.runMarkov(path, seed);
+    }
 }

@@ -11,10 +11,6 @@ public class MarkovZero extends AbstractMarkovModel {
         myRandom = new Random();
     }
 
-    public void setSeed(int seed) {
-        myRandom = new Random(seed);
-    }
-
     @Override
     public String getRandomText(int numChars) {
         if (myText == null) {
