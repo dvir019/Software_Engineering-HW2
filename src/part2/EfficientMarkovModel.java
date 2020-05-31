@@ -19,7 +19,25 @@ public class EfficientMarkovModel extends AbstractMarkovModel {
     }
 
     private void buildMap() {
-
+        for (int startIndex = 0; startIndex + numOfChars <= myText.length(); startIndex++) {
+            int followsCharIndex = startIndex + numOfChars;
+            String key = myText.substring(startIndex, followsCharIndex);
+            boolean keyInHashMap = hashMap.containsKey(key);
+            if (followsCharIndex == myText.length()) {
+                if (!keyInHashMap) {
+                    hashMap.put(key, new ArrayList<>());
+                }
+            } else {
+                char followsChar = myText.charAt(followsCharIndex);
+                if (keyInHashMap) {
+                    hashMap.get(key).add(followsChar);
+                } else {
+                    ArrayList<Character> followsList = new ArrayList<>();
+                    followsList.add(followsChar);
+                    hashMap.put(key, followsList);
+                }
+            }
+        }
     }
 
     @Override
@@ -46,6 +64,11 @@ public class EfficientMarkovModel extends AbstractMarkovModel {
         }
 
         return sb.toString();
+    }
+
+    @Override
+    protected ArrayList<Character> getFollows(String key){
+        return hashMap.get(key);
     }
 
     @Override
