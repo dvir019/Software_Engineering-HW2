@@ -74,13 +74,9 @@ public class MarkovRunner {
 
     public static void main(String[] args) {
         MarkovRunner markovRunner = new MarkovRunner();
-//      markovRunner.runMarkovZero(args[0]);
-        String path = "C:\\Users\\Dvir\\Desktop\\Software_Engineering\\HW2\\Software_Engineering-HW2\\Data\\merkel.txt";
-        markovRunner.runMarkovZero(path);
-        markovRunner.runMarkovOne(path);
-        markovRunner.runMarkovFour(path);
-        markovRunner.runMarkovModel(path);
-
+        markovRunner.runMarkovZero(args[0]);
+        markovRunner.runMarkovOne(args[0]);
+        markovRunner.runMarkovFour(args[0]);
+        markovRunner.runMarkovModel(args[0]);
     }
-
 }
