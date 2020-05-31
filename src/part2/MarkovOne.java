@@ -3,7 +3,7 @@ package part2;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class MarkovOne {
+public class MarkovOne implements IMarkovModel{
     private String myText;
     private Random myRandom;
 
@@ -16,10 +16,12 @@ public class MarkovOne {
         myRandom = new Random(seed);
     }
 
+    @Override
     public void setTraining(String s) {
         myText = s.trim();
     }
 
+    @Override
     public String getRandomText(int numChars) {
         if (myText == null) {
             return "";

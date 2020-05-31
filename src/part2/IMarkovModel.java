@@ -1,3 +1,5 @@
+package part2;
+
 public interface IMarkovModel {
     public void setTraining(String text);
     

@@ -3,7 +3,7 @@ package part2;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class MarkovFour {
+public class MarkovFour implements IMarkovModel {
     private String myText;
     private Random myRandom;
 
@@ -18,10 +18,12 @@ public class MarkovFour {
         myRandom = new Random(seed);
     }
 
+    @Override
     public void setTraining(String s) {
         myText = s.trim();
     }
 
+    @Override
     public String getRandomText(int numChars) {
         if (myText == null) {
             return "";
