@@ -3,7 +3,7 @@ package part2;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class MarkovFour implements IMarkovModel {
+public class MarkovFour extends AbstractMarkovModel {
     private String myText;
     private Random myRandom;
 
@@ -16,11 +16,6 @@ public class MarkovFour implements IMarkovModel {
 
     public void setSeed(int seed) {
         myRandom = new Random(seed);
-    }
-
-    @Override
-    public void setTraining(String s) {
-        myText = s.trim();
     }
 
     @Override
@@ -47,19 +42,5 @@ public class MarkovFour implements IMarkovModel {
         }
 
         return sb.toString();
-    }
-
-    public ArrayList<Character> getFollows(String key) {
-        ArrayList<Character> follows = new ArrayList<>();
-        int startIndex = myText.indexOf(key);
-
-        while (startIndex != -1) {
-            int followingCharIndex = startIndex + key.length();
-            if (followingCharIndex < myText.length()) {
-                follows.add(myText.charAt(followingCharIndex));
-            }
-            startIndex = myText.indexOf(key, startIndex + ONE);
-        }
-        return follows;
     }
 }
