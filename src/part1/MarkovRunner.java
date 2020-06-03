@@ -12,7 +12,7 @@ public class MarkovRunner {
 
     /**
      * Generates three random texts using MarkovZero.
-     *
+     * <p>
      * Uses MarkovZero class to generate three random texts, which contains
      * five hundred characters each, and prints the generated texts.
      *
@@ -33,7 +33,7 @@ public class MarkovRunner {
 
     /**
      * Generates three random texts using MarkovOne.
-     *
+     * <p>
      * Uses MarkovOne class to generate three random texts, which contains
      * five hundred characters each, and prints the generated texts.
      *
@@ -54,7 +54,7 @@ public class MarkovRunner {
 
     /**
      * Generates three random texts using MarkovFour.
-     *
+     * <p>
      * Uses MarkovFour class to generate three random texts, which contains
      * five hundred characters each, and prints the generated texts.
      *
@@ -75,7 +75,7 @@ public class MarkovRunner {
 
     /**
      * Generates three random texts using MarkovModel.
-     *
+     * <p>
      * Uses MarkovModel class with numOfChars=6 to generate three random texts, which contains
      * five hundred characters each, and prints the generated texts.
      *
@@ -112,7 +112,7 @@ public class MarkovRunner {
 
     /**
      * Runs the tests of all of the four classes
-     *
+     * <p>
      * The path to the text file used for the tests is passed as a command line argument.
      *
      * @param args Command line arguments, contains the full path to the text file

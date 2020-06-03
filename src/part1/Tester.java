@@ -3,8 +3,11 @@ package part1;
 import java.util.ArrayList;
 import java.util.Random;
 
+/** Tests the getFollows method found in MarkovOne class */
 public class Tester {
-    private static void testGetFollows(){
+
+    /** Tests the getFollows method found in MarkovOne class */
+    private static void testGetFollows() {
         MarkovOne markovOne = new MarkovOne();
         String training = "this is a test yes this is a test.";
         markovOne.setTraining(training);
@@ -13,10 +16,8 @@ public class Tester {
         System.out.println(follows);
     }
 
+    /** Runs the test */
     public static void main(String[] args) {
-//        testGetFollows();
-        //System.out.println("abcd".indexOf("", 60));
-        ArrayList<Character> l = new ArrayList<>();
-
+        testGetFollows();
     }
 }
