@@ -94,7 +94,11 @@ public class MarkovRunner {
         }
     }
 
-    /** Prints a given string, in format of sixty characters per line */
+    /**
+     * Prints a given string, in format of sixty characters per line
+     *
+     * @param s The string to print out
+     */
     private void printOut(String s) {
         String[] words = s.split("\\s+");
         int psize = 0;
