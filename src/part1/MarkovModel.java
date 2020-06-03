@@ -3,6 +3,7 @@ package part1;
 import java.util.ArrayList;
 import java.util.Random;
 
+/** Generates random text basing on the last numOfChars chosen character */
 public class MarkovModel {
     private String myText;
     private Random myRandom;
@@ -10,6 +11,11 @@ public class MarkovModel {
 
     private static final int ONE = 1;
 
+    /**
+     * Sets numOfChars and initializes myRandom
+     *
+     * @param numOfChars The number of characters to consider when choosing the next character
+     */
     public MarkovModel(int numOfChars) {
         this.numOfChars = numOfChars;
         myRandom = new Random();
@@ -19,10 +25,24 @@ public class MarkovModel {
         myRandom = new Random(seed);
     }
 
+    /**
+     * Sets myText to the given string after trimming it  # TODO improve
+     *
+     * @param s The new training text
+     */
     public void setTraining(String s) {
         myText = s.trim();
     }
 
+    /**
+     * Chooses random text contains numChars characters
+     * <p>
+     * Chooses randomly a sequence of numOfChars character from the text, and then repeatedly choose one more
+     * character from the list of characters that appear after the last chosen numOfChars characters.
+     *
+     * @param numChars The total number of characters to choose from the text
+     * @return The chosen characters, as a string
+     */
     public String getRandomText(int numChars) {
         if (myText == null) {
             return "";
@@ -48,6 +68,17 @@ public class MarkovModel {
         return sb.toString();
     }
 
+    /**
+     * Gets a list of all characters which appears after the given key
+     * <p>
+     * Iterates over the training text and adds all of the characters that appear
+     * directly after the given key into the follows list, and returns the list.
+     * <p>
+     * If there are no characters after the key, an empty list will be returned.
+     *
+     * @param key The # TODO add description
+     * @return A list of all of the characters which appear directly after the key
+     */
     public ArrayList<Character> getFollows(String key) {
         ArrayList<Character> follows = new ArrayList<>();
         int startIndex = myText.indexOf(key);

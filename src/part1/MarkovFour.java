@@ -36,7 +36,7 @@ public class MarkovFour {
      * character from the list of characters that appear after the last chosen four characters.
      *
      * @param numChars The total number of characters to choose from the text
-     * @return The chosen characters
+     * @return The chosen characters, as a string
      */
     public String getRandomText(int numChars) {
         if (myText == null) {
