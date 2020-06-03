@@ -2,8 +2,22 @@ package part1;
 
 import util.*;
 
+/**
+ * Execute tests of the Markov classes
+ * <p>
+ * MarkovZero, MarkovOne, MarkovFour and MarkovModel are being tested,
+ * where MarkovModel is tested with numOfChars=6.
+ */
 public class MarkovRunner {
 
+    /**
+     * Generates three random texts using MarkovZero.
+     *
+     * Uses MarkovZero class to generate three random texts, which contains
+     * five hundred characters each, and prints the generated texts.
+     *
+     * @param trainingFilePath full path to the text file
+     */
     public void runMarkovZero(String trainingFilePath) {
         SEFileUtil seFileUtil = new SEFileUtil(trainingFilePath);
         String st = seFileUtil.asString();
@@ -17,6 +31,14 @@ public class MarkovRunner {
         }
     }
 
+    /**
+     * Generates three random texts using MarkovOne.
+     *
+     * Uses MarkovOne class to generate three random texts, which contains
+     * five hundred characters each, and prints the generated texts.
+     *
+     * @param trainingFilePath full path to the text file
+     */
     public void runMarkovOne(String trainingFilePath) {
         SEFileUtil seFileUtil = new SEFileUtil(trainingFilePath);
         String st = seFileUtil.asString();
@@ -30,6 +52,14 @@ public class MarkovRunner {
         }
     }
 
+    /**
+     * Generates three random texts using MarkovFour.
+     *
+     * Uses MarkovFour class to generate three random texts, which contains
+     * five hundred characters each, and prints the generated texts.
+     *
+     * @param trainingFilePath full path to the text file
+     */
     public void runMarkovFour(String trainingFilePath) {
         SEFileUtil seFileUtil = new SEFileUtil(trainingFilePath);
         String st = seFileUtil.asString();
@@ -43,6 +73,14 @@ public class MarkovRunner {
         }
     }
 
+    /**
+     * Generates three random texts using MarkovModel.
+     *
+     * Uses MarkovModel class with numOfChars=6 to generate three random texts, which contains
+     * five hundred characters each, and prints the generated texts.
+     *
+     * @param trainingFilePath full path to the text file
+     */
     public void runMarkovModel(String trainingFilePath) {
         SEFileUtil seFileUtil = new SEFileUtil(trainingFilePath);
         String st = seFileUtil.asString();
@@ -56,6 +94,7 @@ public class MarkovRunner {
         }
     }
 
+    /** Prints a given string, in format of sixty characters per line */
     private void printOut(String s) {
         String[] words = s.split("\\s+");
         int psize = 0;
@@ -71,7 +110,13 @@ public class MarkovRunner {
         System.out.println("\n----------------------------------");
     }
 
-
+    /**
+     * Runs the tests of all of the four classes
+     *
+     * The path to the text file used for the tests is passed as a command line argument.
+     *
+     * @param args Command line arguments, contains the full path to the text file
+     */
     public static void main(String[] args) {
         MarkovRunner markovRunner = new MarkovRunner();
         markovRunner.runMarkovZero(args[0]);
