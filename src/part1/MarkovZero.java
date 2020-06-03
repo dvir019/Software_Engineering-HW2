@@ -27,7 +27,7 @@ public class MarkovZero {
 
     /**
      * Chooses random text contains numChars characters
-     *
+     * <p>
      * Chooses randomly a given number of characters from the training text,
      * and returns the chosen characters as a string.
      *

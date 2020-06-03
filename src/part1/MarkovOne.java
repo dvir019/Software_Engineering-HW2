@@ -3,18 +3,14 @@ package part1;
 import java.util.ArrayList;
 import java.util.Random;
 
-/**
- * Generates random text basing on the last chosen character
- */
+/** Generates random text basing on the last chosen character */
 public class MarkovOne {
     private String myText;
     private Random myRandom;
 
     private static final int ONE = 1;
 
-    /**
-     * Initializes myRandom
-     */
+    /** Initializes myRandom */
     public MarkovOne() {
         myRandom = new Random();
     }
@@ -36,10 +32,10 @@ public class MarkovOne {
      * Chooses random text contains numChars characters
      * <p>
      * Chooses randomly one character from the text, and then repeatedly choose one more
-     * character from the list of the characters that appears after the last chosen character.
+     * character from the list of characters that appear after the last chosen character.
      *
-     * @param numChars The number of characters to choose from the text
-     * @return The randomly chosen characters
+     * @param numChars The total number of characters to choose from the text
+     * @return The chosen characters
      */
     public String getRandomText(int numChars) {
         if (myText == null) {
