@@ -3,7 +3,7 @@ package part1;
 import java.util.ArrayList;
 import java.util.Random;
 
-/** Generates random text basing on the last four chosen character */
+/** Generates random text basing on the last four chosen characters */
 public class MarkovFour {
     private String myText;
     private Random myRandom;

@@ -3,7 +3,7 @@ package part1;
 import java.util.ArrayList;
 import java.util.Random;
 
-/** Generates random text basing on the last numOfChars chosen character */
+/** Generates random text basing on the last numOfChars chosen characters */
 public class MarkovModel {
     private String myText;
     private Random myRandom;
