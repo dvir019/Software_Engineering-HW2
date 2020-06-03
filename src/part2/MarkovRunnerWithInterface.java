@@ -17,7 +17,7 @@ public class MarkovRunnerWithInterface {
      * Generates three random texts using the given markov.
      * <p>
      * Uses the given markov to generate three random texts, which contains
-     * five hundred characters each, and prints the generated texts.
+     * a given number of characters each, and prints the generated texts.
      *
      * @param markov The markov object
      * @param text   The training text of the markov object

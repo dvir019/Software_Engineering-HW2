@@ -6,9 +6,9 @@ import java.util.*;
 public abstract class AbstractMarkovModel implements IMarkovModel {
     protected String myText;
     protected Random myRandom;
-    private int markovOrder;
+    protected int markovOrder;
 
-    private static final int ONE=1;
+    private static final int ONE = 1;
 
     /**
      * Sets markovOrder and initializes myRandom
