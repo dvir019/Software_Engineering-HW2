@@ -1,7 +1,6 @@
 package part2;
 
-import java.util.Random;
-
+/** Generates random text without basing on previous characters */
 public class MarkovZero extends AbstractMarkovModel {
 
     private static final int ZERO = 0;

@@ -1,8 +1,8 @@
 package part2;
 
 import java.util.ArrayList;
-import java.util.Random;
 
+/** Generates random text basing on the last chosen character */
 public class MarkovOne extends AbstractMarkovModel{
 
     private static final int ONE = 1;

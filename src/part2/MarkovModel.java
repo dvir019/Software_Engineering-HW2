@@ -1,14 +1,19 @@
 package part2;
 
 import java.util.ArrayList;
-import java.util.Random;
 
+/** Generates random text basing on the last numOfChars chosen characters */
 public class MarkovModel extends AbstractMarkovModel {
 
     private int numOfChars;
 
     private static final int ONE = 1;
 
+    /**
+     * Calls the base constructor and initializes numOfChars
+     *
+     * @param numOfChars numOfChars The number of characters to consider when choosing the next character
+     */
     public MarkovModel(int numOfChars) {
         super(numOfChars);
         this.numOfChars = numOfChars;

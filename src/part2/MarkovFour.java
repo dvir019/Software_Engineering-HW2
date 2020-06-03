@@ -1,8 +1,8 @@
 package part2;
 
 import java.util.ArrayList;
-import java.util.Random;
 
+/** Generates random text basing on the last four chosen characters */
 public class MarkovFour extends AbstractMarkovModel {
 
     private static final int FOUR = 4;
