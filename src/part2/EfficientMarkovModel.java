@@ -7,7 +7,7 @@ import java.util.Random;
 public class EfficientMarkovModel extends AbstractMarkovModel {
 
     private int numOfChars;
-    HashMap<String, ArrayList<Character>> hashMap;
+    private HashMap<String, ArrayList<Character>> hashMap;
 
     private static final int ONE = 1;
 
@@ -41,6 +41,12 @@ public class EfficientMarkovModel extends AbstractMarkovModel {
     }
 
     @Override
+    public void setTraining(String s) {
+        super.setTraining(s);
+        buildMap();
+    }
+
+    @Override
     public String getRandomText(int numChars) {
         if (myText == null) {
             return "";
@@ -65,6 +71,7 @@ public class EfficientMarkovModel extends AbstractMarkovModel {
 
         return sb.toString();
     }
+
 
     @Override
     protected ArrayList<Character> getFollows(String key){
