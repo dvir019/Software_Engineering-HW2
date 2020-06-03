@@ -1,7 +1,6 @@
 package part1;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 /** Tests the getFollows method found in MarkovOne class */
 public class Tester {
