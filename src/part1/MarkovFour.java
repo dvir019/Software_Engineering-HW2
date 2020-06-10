@@ -3,7 +3,9 @@ package part1;
 import java.util.ArrayList;
 import java.util.Random;
 
-/** Generates random text basing on the last four chosen characters */
+/**
+ * Generates random text basing on the last four chosen characters
+ */
 public class MarkovFour {
     private String myText;
     private Random myRandom;
@@ -21,7 +23,10 @@ public class MarkovFour {
     }
 
     /**
-     * Sets myText to the given string after trimming it  # TODO improve
+     * Sets myText to the given string
+     * <p>
+     * Trims the leading and trailing whitespaces from the given string,
+     * and sets myText to the trimmed string.
      *
      * @param s The new training text
      */

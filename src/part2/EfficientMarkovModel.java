@@ -52,7 +52,11 @@ public class EfficientMarkovModel extends AbstractMarkovModel {
         }
     }
 
-    /** Sets the training text, and builds the hashMap object according to it */
+    /**
+     * Sets the training text, and builds the hashMap object according to it
+     *
+     * @param s The new training text
+     */
     @Override
     public void setTraining(String s) {
         super.setTraining(s);

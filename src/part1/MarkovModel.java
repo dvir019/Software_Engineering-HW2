@@ -26,7 +26,10 @@ public class MarkovModel {
     }
 
     /**
-     * Sets myText to the given string after trimming it  # TODO improve
+     * Sets myText to the given string
+     * <p>
+     * Trims the leading and trailing whitespaces from the given string,
+     * and sets myText to the trimmed string.
      *
      * @param s The new training text
      */
