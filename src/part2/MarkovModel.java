@@ -4,9 +4,10 @@ import java.util.ArrayList;
 
 /** Generates random text basing on the last numOfChars chosen characters */
 public class MarkovModel extends AbstractMarkovModel {
-
+    // Fields
     private int numOfChars;
 
+    // Constants
     private static final int ONE = 1;
 
     /**

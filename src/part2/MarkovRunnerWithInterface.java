@@ -9,7 +9,7 @@ import util.SEFileUtil;
  * where MarkovModel is tested with numOfChars=3.
  */
 public class MarkovRunnerWithInterface {
-
+    // Constants
     private static final int NUMBER_OF_ARGUMENTS = 2;
     private static final int SEED_DEFAULT = 0;
 

@@ -9,7 +9,6 @@ import util.*;
  * where MarkovModel is tested with numOfChars=6.
  */
 public class MarkovRunner {
-
     /**
      * Generates three random texts using MarkovZero.
      * <p>

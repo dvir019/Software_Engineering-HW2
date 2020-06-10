@@ -4,6 +4,7 @@ import java.util.Random;
 
 /** Generates random text without basing on previous characters */
 public class MarkovZero {
+    // Fields
     private String myText;
     private Random myRandom;
 

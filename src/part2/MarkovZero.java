@@ -2,7 +2,7 @@ package part2;
 
 /** Generates random text without basing on previous characters */
 public class MarkovZero extends AbstractMarkovModel {
-
+    // Constants
     private static final int ZERO = 0;
 
     public MarkovZero() {

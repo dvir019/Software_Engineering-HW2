@@ -3,11 +3,16 @@ package part2;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
+/**
+ * Generates random text basing on the last numOfChars chosen characters
+ * <p>
+ * The efficiency is due to a usage of hashMap, that saves many iterations over the training text.
+ */
 public class EfficientMarkovModel extends AbstractMarkovModel {
-
+    // Fields
     private HashMap<String, ArrayList<Character>> hashMap;
 
+    // Constants
     private static final int ONE = 1;
 
     /**
@@ -89,9 +94,17 @@ public class EfficientMarkovModel extends AbstractMarkovModel {
     }
 
 
+    /**
+     * Gets a list of all characters which appears after the given key
+     * <p>
+     * Assumption: The key is found in the training text (and thus exists in hashMap).
+     *
+     * @param key String represents the key
+     * @return A list of all of the characters which appear directly after the key
+     */
     @Override
     protected ArrayList<Character> getFollows(String key) {
-        return hashMap.get(key);  // TODO Check if doesn't exist
+        return hashMap.get(key);
     }
 
     @Override

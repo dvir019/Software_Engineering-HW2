@@ -5,9 +5,11 @@ import java.util.Random;
 
 /** Generates random text basing on the last chosen character */
 public class MarkovOne {
+    // Fields
     private String myText;
     private Random myRandom;
 
+    // Constants
     private static final int ONE = 1;
 
     /** Initializes myRandom */

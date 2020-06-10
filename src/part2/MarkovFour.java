@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /** Generates random text basing on the last four chosen characters */
 public class MarkovFour extends AbstractMarkovModel {
-
+    // Constants
     private static final int FOUR = 4;
     private static final int ONE = 1;
 

@@ -2,10 +2,9 @@ package part2;
 
 import util.SEFileUtil;
 
-/**
- * Execute tests of the EfficientMarkovModel class with numOfChars=5 */
+/** Execute tests of the EfficientMarkovModel class with numOfChars=5 */
 public class MarkovRunnerWithInterfaceEfficient {
-
+    // Constants
     private static final int NUMBER_OF_ARGUMENTS = 2;
     private static final int SEED_DEFAULT = 0;
 

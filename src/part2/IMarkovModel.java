@@ -1,7 +1,6 @@
 package part2;
 
 public interface IMarkovModel {
-
     /**
      * Sets myText to the given string
      *

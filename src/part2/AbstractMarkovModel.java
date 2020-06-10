@@ -4,10 +4,12 @@ import java.util.*;
 
 /** Abstract class which generates random text basing on the last markovOrder chosen characters */
 public abstract class AbstractMarkovModel implements IMarkovModel {
+    // Fields
     protected String myText;
     protected Random myRandom;
     protected int markovOrder;
 
+    // Constants
     private static final int ONE = 1;
 
     /**

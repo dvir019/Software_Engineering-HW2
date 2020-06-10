@@ -5,10 +5,12 @@ import java.util.Random;
 
 /** Generates random text basing on the last numOfChars chosen characters */
 public class MarkovModel {
+    // Fields
     private String myText;
     private Random myRandom;
     private int numOfChars;
 
+    // Constants
     private static final int ONE = 1;
 
     /**
