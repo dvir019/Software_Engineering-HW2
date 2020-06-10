@@ -78,7 +78,7 @@ public class MarkovModel {
      * <p>
      * If there are no characters after the key, an empty list will be returned.
      *
-     * @param key The # TODO add description
+     * @param key String represents the key
      * @return A list of all of the characters which appear directly after the key
      */
     public ArrayList<Character> getFollows(String key) {
