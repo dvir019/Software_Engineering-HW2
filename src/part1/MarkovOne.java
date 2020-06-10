@@ -25,10 +25,10 @@ public class MarkovOne {
      * Trims the leading and trailing whitespaces from the given string,
      * and sets myText to the trimmed string.
      *
-     * @param s The new training text
+     * @param text The new training text
      */
-    public void setTraining(String s) {
-        myText = s.trim();
+    public void setTraining(String text) {
+        myText = text.trim();
     }
 
     /**

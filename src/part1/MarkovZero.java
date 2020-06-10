@@ -19,10 +19,10 @@ public class MarkovZero {
     /**
      * Sets myText to the given string after trimming it  # TODO improve
      *
-     * @param s The new training text
+     * @param text The new training text
      */
-    public void setTraining(String s) {
-        myText = s.trim();
+    public void setTraining(String text) {
+        myText = text.trim();
     }
 
     /**
