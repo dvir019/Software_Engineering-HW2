@@ -55,8 +55,7 @@ public class MarkovFour {
 
         for (int k = FOUR; k < numChars; k++) {
             ArrayList<Character> follows = getFollows(key);
-            // TODO change
-            if (follows.isEmpty()) {
+            if (follows.isEmpty()) {  // There are no following characters
                 break;
             }
             index = myRandom.nextInt(follows.size());

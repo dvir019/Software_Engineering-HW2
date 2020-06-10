@@ -24,8 +24,7 @@ public class MarkovOne extends AbstractMarkovModel{
 
         for (int k = 1; k < numChars; k++) {
             ArrayList<Character> follows = getFollows(String.valueOf(selectedChar));
-            // TODO change
-            if (follows.isEmpty()) {
+            if (follows.isEmpty()) {  // There are no following characters
                 break;
             }
             index = myRandom.nextInt(follows.size());

@@ -76,8 +76,7 @@ public class EfficientMarkovModel extends AbstractMarkovModel {
 
         for (int k = markovOrder; k < numChars; k++) {
             ArrayList<Character> follows = getFollows(key);
-            // TODO change
-            if (follows.isEmpty()) {
+            if (follows.isEmpty()) {  // There are no following characters
                 break;
             }
             index = myRandom.nextInt(follows.size());
